@@ -35,11 +35,6 @@ global math
 
 $$X_{i}=F(X_{i-1})\cup X_{i-1}$$
 
-continuous math
-
-$$f(X^{n}_{i} - X^{n}_{i-1}) \cap F(X_{i-1}) = \phi$$ 
-$$f(X^{n}_{i} - X^{n}_{i-1}) \cap X_{i-1} = \phi$$
-
 ### Mermaid
 
 #### Flow Chart
@@ -86,14 +81,20 @@ gantt
 Success Text.
 {:.success}
 
-Info Text.
-{:.info}
+aaa
 
 Info Text.
 {:.info}
 
-Info Text.
-{:.info}
+bbb
+
+Warning Text.
+{:.warning}
+
+ccc
+
+Error Text.
+{:.error}
 
 ## Source Code
 
