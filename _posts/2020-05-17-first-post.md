@@ -67,13 +67,13 @@ gantt
     dateFormat YYYY-MM-DD
 
     section ~高校生
-    A       :a1 ,2007-04-01 ,6y
+    A       :a1 ,2007-04-01 ,6d
 
     section 闇
-    B       :b1 ,after a1 ,6y
+    B       :b1 ,after a1 ,6d
 
     section エンジニア
-    C       :c1 ,after b1 ,1y
+    C       :c1 ,after b1 ,1d
 ```
 
 ## Extra
