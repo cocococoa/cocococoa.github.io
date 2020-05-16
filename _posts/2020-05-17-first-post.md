@@ -12,6 +12,20 @@ tags: TeXt
 | -------- | ------- | ------- | ------- | ------- | --------- | --------- | --------- |
 | time[ms] | 2.4     | 5.0     | 9.9     | 64.0    | 208.0     | 416.0     | 803.0     |
 
+---
+
+* __A__
+    * _B_
+* C
+    1. D
+    ```cpp
+    int E = 1
+    ```
+    1. ~Z~
+* `Z`
+* [google](https://www.google.co.jp/)
+* [to header](#Markdown)
+
 ## Markdown Enhancements
 
 ### Mathjax
@@ -23,7 +37,7 @@ $$X_{i}=F(X_{i-1})\cup X_{i-1}$$
 
 continuous math
 
-$$f(X^{n}_{i} - X^{n}_{i-1}) \cap F(X_{i-1}) = \phi$$
+$$f(X^{n}_{i} - X^{n}_{i-1}) \cap F(X_{i-1}) = \phi \\$$
 $$f(X^{n}_{i} - X^{n}_{i-1}) \cap X_{i-1} = \phi \notags$$
 
 ### Mermaid
@@ -71,6 +85,8 @@ gantt
 
 ## Source Code
 
+### C++
+
 ```cpp
 constexpr int N = 100'000;
 alignas(32) float ra[N], rb[N], rc[N], ia[N], ib[N], ic[N];
@@ -89,6 +105,8 @@ void simd_vector_mult() {
     }
 }
 ```
+
+### Assembly
 
 ```Assembly
 	.globl	_Z16simd_vector_multv   # -- Begin function _Z16simd_vector_multv
@@ -132,6 +150,8 @@ _Z16simd_vector_multv:                  # @_Z16simd_vector_multv
 	.cfi_endproc
                                         # -- End function
 ```
+
+### Rust
 
 ```rust
 #[derive(Debug, Clone, Eq, PartialEq)]
@@ -221,6 +241,8 @@ pub fn isbn(string: &str) -> Result<(u32, u32, u32), ISBNError> {
     }
 }
 ```
+
+### Haskell
 
 ```haskell
 module Main where
