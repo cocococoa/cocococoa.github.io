@@ -24,7 +24,7 @@ tags: TeXt
     1. ~Z~
 * `Z`
 * [google](https://www.google.co.jp/)
-* [to header](#Markdown)
+* [to last](#Haskell)
 
 ## Markdown Enhancements
 
@@ -37,8 +37,8 @@ $$X_{i}=F(X_{i-1})\cup X_{i-1}$$
 
 continuous math
 
-$$f(X^{n}_{i} - X^{n}_{i-1}) \cap F(X_{i-1}) = \phi \\$$
-$$f(X^{n}_{i} - X^{n}_{i-1}) \cap X_{i-1} = \phi \notags$$
+$$f(X^{n}_{i} - X^{n}_{i-1}) \cap F(X_{i-1}) = \phi$$ 
+$$f(X^{n}_{i} - X^{n}_{i-1}) \cap X_{i-1} = \phi$$
 
 ### Mermaid
 
@@ -80,8 +80,20 @@ gantt
 
 ## Extra
 
-* Icons: :ghost: , :ghost:, :star2:
+* Icons: :ghost:  :ghost: :star2:
 * Button: [BUTTON](#){:.button.button--primary.button--pill}
+
+Success Text.
+{:.success}
+
+Info Text.
+{:.info}
+
+Info Text.
+{:.info}
+
+Info Text.
+{:.info}
 
 ## Source Code
 
