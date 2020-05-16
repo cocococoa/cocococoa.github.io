@@ -12,7 +12,7 @@ tags: TeXt
 | -------- | ------- | ------- | ------- | ------- | --------- | --------- | --------- |
 | time[ms] | 2.4     | 5.0     | 9.9     | 64.0    | 208.0     | 416.0     | 803.0     |
 
----
+---------------
 
 * __A__
     * _B_
@@ -26,8 +26,11 @@ tags: TeXt
 * [google](https://www.google.co.jp/)
 * [to last](#haskell)
 
-ページ内リンクの仕方がわからないので上のto-lastは機能しない。
-{:.error}
+Language
+: C++
+: Rust
+: Haskell
+: Python
 
 ## Markdown Enhancements
 
@@ -64,10 +67,10 @@ sequenceDiagram
 ```mermaid
 gantt
     title my life
-    dateFormat YYYY-MM-DD
+    dateFormat MM-DD
 
     section ~高校生
-    A       :a1 ,2007-04-01 ,6d
+    A       :a1 ,04-01 ,6d
 
     section 闇
     B       :b1 ,after a1 ,6d
