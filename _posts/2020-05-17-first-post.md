@@ -3,7 +3,6 @@ title: First Post
 tags: TeXt
 ---
 
-`success`{:.success}
 `TeXt` というテーマが便利そうだったので使ってみる。
 この記事では `TeXt` に実装されているいろいろな機能をテストする。
 
@@ -25,7 +24,7 @@ tags: TeXt
     1. ~Z~
 * `Z`
 * [google](https://www.google.co.jp/)
-* [to last](#Haskell)
+* [to last](#haskell)
 
 ページ内リンクの仕方がわからないので上のto-lastは機能しない。
 {:.error}
@@ -79,7 +78,7 @@ gantt
 
 ## Extra
 
-* Icons: :ghost:  :ghost: :star2:
+* Icons: :ghost: :triumph: :octocat: :+1: :star2:
 * Button: [BUTTON](#){:.button.button--primary.button--pill}
 
 Success Text.
