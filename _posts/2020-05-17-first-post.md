@@ -3,6 +3,7 @@ title: First Post
 tags: TeXt
 ---
 
+`success`{:.success}
 `TeXt` というテーマが便利そうだったので使ってみる。
 この記事では `TeXt` に実装されているいろいろな機能をテストする。
 
@@ -16,7 +17,7 @@ tags: TeXt
 
 * __A__
     * _B_
-* C
+* ___C___
     1. D
     ```cpp
     int E = 1
@@ -25,6 +26,9 @@ tags: TeXt
 * `Z`
 * [google](https://www.google.co.jp/)
 * [to last](#Haskell)
+
+ページ内リンクの仕方がわからないので上のto-lastは機能しない。
+{:.error}
 
 ## Markdown Enhancements
 
@@ -64,13 +68,13 @@ gantt
     dateFormat YYYY-MM-DD
 
     section ~高校生
-    A       :a1 ,2019-12-12 ,6h
+    A       :a1 ,2007-04-01 ,6y
 
     section 闇
-    B       :b1 ,after a1 ,3h
+    B       :b1 ,after a1 ,6y
 
     section エンジニア
-    C       :c1 ,after b1 ,1h
+    C       :c1 ,after b1 ,1y
 ```
 
 ## Extra
@@ -119,10 +123,13 @@ void simd_vector_mult() {
 }
 ```
 
+複素数が格納された二つの配列の要素後の積を計算するSIMDプログラム
+{:.info}
+
 ### Assembly
 
-```Assembly
-	.globl	_Z16simd_vector_multv   # -- Begin function _Z16simd_vector_multv
+```nasm
+.globl	_Z16simd_vector_multv   # -- Begin function _Z16simd_vector_multv
 	.p2align	4, 0x90
 	.type	_Z16simd_vector_multv,@function
 _Z16simd_vector_multv:                  # @_Z16simd_vector_multv
@@ -163,6 +170,10 @@ _Z16simd_vector_multv:                  # @_Z16simd_vector_multv
 	.cfi_endproc
                                         # -- End function
 ```
+
+先ほどのSIMDプログラムをコンパイルしたアセンブリ。   
+ymmレジスタを6本使って計算する至って想定通りの命令が吐かれているのがわかる。
+{:.info}
 
 ### Rust
 
@@ -254,6 +265,10 @@ pub fn isbn(string: &str) -> Result<(u32, u32, u32), ISBNError> {
     }
 }
 ```
+
+入力文字列がISBN-10として妥当かチェックするプログラム。結構ダサい。
+{:.info}
+
 
 ### Haskell
 
