@@ -21,7 +21,7 @@ tags: TeXt
     ```cpp
     int E = 1
     ```
-    1. ~Z~
+    1. Z
 * `Z`
 * [google](https://www.google.co.jp/)
 * [to last](#haskell)
@@ -68,6 +68,7 @@ sequenceDiagram
 gantt
     title my life
     dateFormat MM-DD
+    axisFormat  %m/%d
 
     section ~高校生
     A       :a1 ,04-01 ,6d
@@ -87,17 +88,11 @@ gantt
 Success Text.
 {:.success}
 
-aaa
-
 Info Text.
 {:.info}
 
-bbb
-
 Warning Text.
 {:.warning}
-
-ccc
 
 Error Text.
 {:.error}
@@ -105,6 +100,9 @@ Error Text.
 ## Source Code
 
 ### C++
+
+複素数が格納された二つの配列の要素後の積を計算するSIMDプログラム
+{:.info}
 
 ```cpp
 constexpr int N = 100'000;
@@ -125,10 +123,11 @@ void simd_vector_mult() {
 }
 ```
 
-複素数が格納された二つの配列の要素後の積を計算するSIMDプログラム
-{:.info}
-
 ### Assembly
+
+先ほどのSIMDプログラムをコンパイルしたアセンブリ。   
+ymmレジスタを6本使って計算する至って想定通りの命令が吐かれているのがわかる。
+{:.info}
 
 ```nasm
 .globl	_Z16simd_vector_multv   # -- Begin function _Z16simd_vector_multv
@@ -173,11 +172,10 @@ _Z16simd_vector_multv:                  # @_Z16simd_vector_multv
                                         # -- End function
 ```
 
-先ほどのSIMDプログラムをコンパイルしたアセンブリ。   
-ymmレジスタを6本使って計算する至って想定通りの命令が吐かれているのがわかる。
-{:.info}
-
 ### Rust
+
+入力文字列がISBN-10として妥当かチェックするプログラム。結構ダサい。
+{:.info}
 
 ```rust
 #[derive(Debug, Clone, Eq, PartialEq)]
@@ -268,11 +266,12 @@ pub fn isbn(string: &str) -> Result<(u32, u32, u32), ISBNError> {
 }
 ```
 
-入力文字列がISBN-10として妥当かチェックするプログラム。結構ダサい。
-{:.info}
-
 
 ### Haskell
+
+四則演算文字列をトークナイズ、パース、評価するプログラム   
+右結合の演算子をパースするのに苦労した記憶はあるが、もうhaskellは書けないので分からない。
+{:.info}
 
 ```haskell
 module Main where
