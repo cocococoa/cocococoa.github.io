@@ -200,7 +200,7 @@ defaults:
       layout: article
       sharing: true
       aside:
-        toc: 
+        toc: true
       pageview: true
       full_width: true
 
