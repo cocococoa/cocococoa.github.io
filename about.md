@@ -1,9 +1,8 @@
 ---
 layout: article
+title: Resume
 key: page-about
 ---
-
-# Resume
 
 ## Name
 
