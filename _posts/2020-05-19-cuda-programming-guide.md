@@ -3,7 +3,7 @@ title: CUDA C++ Programming Guide メモ(1)
 tags: GPU
 ---
 
-* https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html
+* <https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html>
 
 ## Chapter 1.
 
