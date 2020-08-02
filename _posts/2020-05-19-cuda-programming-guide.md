@@ -87,7 +87,7 @@ three key abstractions
         stream_attribute.accessPolicyWindow.missProp = cudaAccessPropertyStreaming; // キャッシュミスし時の access property
         ```
     3. Reset L2 Access to Normal
-        * `cudaAccessPropertyormal()`, `cudaCtxResetPersistingL2Cahce()`
+        * `cudaAccessPropertyNormal`, `cudaCtxResetPersistingL2Cache()`
     * 注意: 複数のストリームがそれぞれ異なるaccess policy windowを使っている場合に、L2 set-aside cache portionはすべての実行中のカーネルで共有されている
 * shared memory: global memoryより速いことが期待される
     * 行列積の例(略)
@@ -113,14 +113,14 @@ three key abstractions
 * 3.2.6. Asynchronous Concurrent Execution: **PASS** (**TODO**: いずれ読む)
     * 3.2.6.6. CUDA Graphs: 操作がnode、操作間の依存関係がエッジ
 * 3.2.7. Multi-Device System
-    * 3.2.7.4. Peer-to-Peer Memory Access: `cudaDeviceEnablePeerAccess()`を呼ばなければならない
+    * 3.2.7.4. Peer-to-Peer Memory Access: [`cudaDeviceEnablePeerAccess()`](https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__PEER.html#group__CUDART__PEER_1g2b0adabf90db37e5cfddc92cbb2589f3)を呼ばなければならない
     * `cudaMemcpyPeer()`
 * 3.2.8. Unified Virtual Address Space
     * A **single address space** is used for the host and all devices
-    * `cudaPointerGetAttributes()`
+    * [`cudaPointerGetAttributes()`](https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__UNIFIED.html#group__CUDART__UNIFIED_1gd89830e17d399c064a2f3c3fa8bb4390)
     * `cudaMemcpyDefault`
     * `cudaHostAlloc()`で確保したメモリは自動的にportableとなる。そして`cudaHostAlloc()`の返り値をカーネルに渡せる
-        * `cudaHostGetDevicePointer()`でデバイスポインタを獲得する必要はない
+        * [`cudaHostGetDevicePointer()`](https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__MEMORY.html#group__CUDART__MEMORY_1gc00502b44e5f1bdc0b424487ebb08db0)でデバイスポインタを獲得する必要はない
 * 3.2.9. Interprocess Communication: **PASS**
 * 3.2.10. Error Checking: **PASS**
 * 3.2.11. Call Stack: **PASS**

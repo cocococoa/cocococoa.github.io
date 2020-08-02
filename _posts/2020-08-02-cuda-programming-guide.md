@@ -108,23 +108,24 @@ execution configuratinのパフォーマンスへの寄与はカーネルのコ�
 ただ、configurationを決定するのを補助するAPIはいくつも用意してある。
 
 * **Occupancy**
-    * `cudaOccupancyMaxActiveBlocksPerMultiprocessor`
-    * `cudaOccupancyMaxPotentialBlockSize`, `cudaOccupancyMaxPotentialBlockSizeVariableSMem`
+    * [`cudaOccupancyMaxActiveBlocksPerMultiprocessor`](https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__HIGHLEVEL.html#group__CUDART__HIGHLEVEL_1g5a5d67a3c907371559ba692195e8a38c)
+    * [`cudaOccupancyMaxPotentialBlockSize`](https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__HIGHLEVEL.html#group__CUDART__HIGHLEVEL_1gee5334618ed4bb0871e4559a77643fc1), [`cudaOccupancyMaxPotentialBlockSizeVariableSMem`](https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__HIGHLEVEL.html#group__CUDART__HIGHLEVEL_1g77b3bfb154b86e215a5bc01509ce8ea6)
 
 ### 5.3. Maximize Memory Throughput
 
 > The first step in maximizing overall memory throughput for the application is to minimize data transfers with low bandwidth.
 
 つまり、hostとdeviceの通信は最小限にとどめる。
-次に、global memoryとdeviceの通信も最小限にとどめる。つまりon-chipメモリ(shared memory, caches)を有効に使おう。
 
 > The next step in maximizing memory throughput is therefore to organize memory accesses at optimally as possible based on the optimal memory access patterns.
+
+次に、global memoryとdeviceの通信も最小限にとどめる。つまりon-chipメモリ(shared memory, caches)を有効に使おう。
 
 * Global Memory: 32-, 64-, or 128-byte transactions
     * global memory throughputを最大化するためには、
         * (ccごとの)最適なアクセスパターンに従う
         * sizeやalignmentに気を使う: runtime APIでmallocしたデバイスメモリは少なくとも256bytesにアラインされている。
-        ```
+        ```cpp
         struct __align__(16) {
             float x;
             float y;
