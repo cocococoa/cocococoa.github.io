@@ -127,9 +127,9 @@ execution configuratinのパフォーマンスへの寄与はカーネルのコ�
         * sizeやalignmentに気を使う: runtime APIでmallocしたデバイスメモリは少なくとも256bytesにアラインされている。
         ```cpp
         struct __align__(16) {
-            float x;
-            float y;
-            float z;
+		float x;
+		float y;
+		float z;
         };
         ```
         * 適度にpaddingする
