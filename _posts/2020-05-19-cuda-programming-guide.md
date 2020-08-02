@@ -71,13 +71,13 @@ three key abstractions
     * カーネル中で何度もアクセスするメモリ: `persisting`
     * 逆に一度だけアクセスするメモリ: `streaming`
     * CUDA11.0, CC>=8.0から、L2キャッシュを操作しpersistence of data in the L2 cacheが可能となった
-    * 1. 操作可能なL2キャッシュ領域を確保する
+    1. 操作可能なL2キャッシュ領域を確保する
         ```cpp
         cudaGetDeciveProperties(&prop, device_id);
         size_t size = min(int(prop.l2CacheSize * 0.75), prop.persisteingL2CacheMaxSize);
         cudaDeviceSetLimit(cudaLimitPersistingL2CacheSize, size); // L2キャッシュの3/4をpersisting access用に確保
         ```
-    * 2. L2 Policy for persisting acces
+    2. L2 Policy for persisting acces
         ```cpp
         cudaStreamAttrValue stream_attribute;
         stream_attribute.accessPolicyWindow.base_ptr = reinterpret_cast<void*>(d_ptr);
@@ -86,7 +86,7 @@ three key abstractions
         stream_attribute.accessPolicyWindow.hitProp = cudaAccessPropertyPersisting; // キャッシュヒットした時の access property
         stream_attribute.accessPolicyWindow.missProp = cudaAccessPropertyStreaming; // キャッシュミスし時の access property
         ```
-    * 3. Reset L2 Access to Normal
+    3. Reset L2 Access to Normal
         * `cudaAccessPropertyormal()`, `cudaCtxResetPersistingL2Cahce()`
     * 注意: 複数のストリームがそれぞれ異なるaccess policy windowを使っている場合に、L2 set-aside cache portionはすべての実行中のカーネルで共有されている
 * shared memory: global memoryより速いことが期待される
@@ -107,9 +107,9 @@ three key abstractions
     * hostにおいて、Write-Combining Memoryからの読み取りは遅い
         * hostは書き込むだけのメモリを`write-combinig`にすることが普通
 * Mapped Memory: page-locked host memoryはdeviceのアドレス空間にマップすることができる
-    * flag: `cudaHostAllocMapped` -> `cudaHostAlloc(), `cudaHostRegisterMapped` -> `cudaHostRegister()` 
+    * flag: `cudaHostAllocMapped` -> `cudaHostAlloc()`, `cudaHostRegisterMapped` -> `cudaHostRegister()` 
     * つまりmapped memoryは二つのアドレスを持つ: host(`cudaHostAlloc`の返り値)と、device(`cudaHostGetDevicePointer()`の返り値)
-        * 例外はunified address spaceを使っている場合
+        * unified address spaceの場合は例外
 * 3.2.6. Asynchronous Concurrent Execution: **PASS** (**TODO**: いずれ読む)
     * 3.2.6.6. CUDA Graphs: 操作がnode、操作間の依存関係がエッジ
 * 3.2.7. Multi-Device System
