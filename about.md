@@ -35,5 +35,8 @@ Masaki Ono
 
 ## Products
 
-* [mix-emulator](https://github.com/cocococoa/mix-emulator): Emulator of [MIX](https://en.wikipedia.org/wiki/MIX) written in Rust
-    * this is under development
+
+* WIP
+    * [mix-emulator](https://github.com/cocococoa/mix-emulator): Emulator of [MIX](https://en.wikipedia.org/wiki/MIX) written in Rust
+    * [LPSolver](https://github.com/cocococoa/LPSolver): LP Solver on GPU
+    * [BDD](https://github.com/cocococoa/bdd): BDD library written in Rust
