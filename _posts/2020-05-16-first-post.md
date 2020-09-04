@@ -1,6 +1,5 @@
 ---
 title: First Post
-tags: TeXt
 ---
 
 `TeXt` というテーマが便利そうだったので使ってみる。
